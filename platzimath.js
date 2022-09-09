@@ -36,3 +36,37 @@ function calcularPromedio(lista){
 
 //array functions
 //const a = () => {};
+
+//mi metodo de par o impar
+// function parOImpar(lista){
+//     const densidad = lista.length;
+    
+//     if((densidad % 2) == 0){
+//         console.log('La lista es par');
+//     }
+//     else{
+//         console.log('La lista es impar');
+//     }
+// }
+
+function esPar(lista){
+    return !(lista.length % 2);
+}
+function esImpar(lista){
+    return lista.length % 2;  
+}
+
+function calcularMediana(lista){
+    const listaEsPar = esPar(lista);
+
+    if (listaEsPar){
+
+    }
+    else{
+        const indexMitadListaImpar = Math.floor(lista.length / 2);
+        const medianaListaImpar = lista[indexMitadListaImpar];
+        console.log(lista[indexMitadListaImpar]);
+        console.log(medianaListaImpar);
+        return medianaListaImpar;
+    }
+}
