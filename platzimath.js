@@ -83,10 +83,10 @@ PlatziMath.calcularModa = function calcularModa(lista){
     return moda;
 }
 
-PlatziMath.calcularModa = function calcularMediana(listaDesordenada){
-    const lista = ordenarLista(listaDesordenada);
+PlatziMath.calcularMediana = function calcularMediana(listaDesordenada){
+    const lista = PlatziMath.ordenarLista(listaDesordenada);
 
-    const listaEsPar = esPar(lista);
+    const listaEsPar = PlatziMath.esPar(lista);
 
     if (listaEsPar){
         const indexMitad1ListaPar = (lista.length / 2) -1;
@@ -95,7 +95,9 @@ PlatziMath.calcularModa = function calcularMediana(listaDesordenada){
         const listaMitades = [];
         listaMitades.push(lista[indexMitad1ListaPar]);
         listaMitades.push(lista[indexMitad2ListaPar]);
-        calcularPromedio(listaMitades)
+        
+        const medianaListaPar = PlatziMath.calcularPromedio(listaMitades);
+        return medianaListaPar;
     }
     else{
         const indexMitadListaImpar = Math.floor(lista.length / 2);
@@ -144,6 +146,7 @@ PlatziMath.ordenarLista = function ordenarLista(listaDesordenada){
 }
 
 // [ [0,1], [0,1], [0,1] ]
+
 PlatziMath.ordenarListaBidimensional = function ordenarListaBidimensional(listaDesordenada){
     function ordenarListaSort(valorAcumulado, nuevoValor){
         return valorAcumulado[1] - nuevoValor[1];
